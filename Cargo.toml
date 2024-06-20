@@ -1,0 +1,17 @@
+[package]
+name = "tauri-plugin-easytier"
+version = "0.0.0"
+authors = ["m1m1sha"]
+description = "tauri plugin for easytier"
+edition = "2021"
+rust-version = "1.70"
+exclude = ["/examples", "/webview-dist", "/webview-src", "/node_modules"]
+links = "tauri-plugin-easytier"
+
+[dependencies]
+tauri = { version = "2.0.0-beta" }
+serde = "1.0"
+thiserror = "1.0"
+
+[build-dependencies]
+tauri-plugin = { version = "2.0.0-beta", features = ["build"] }
