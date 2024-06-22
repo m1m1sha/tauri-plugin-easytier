@@ -295,31 +295,73 @@
       "type": "string",
       "oneOf": [
         {
-          "description": "allow-execute -> Enables the execute command without any pre-configured scope.",
+          "description": "allow-collect-network-infos -> Enables the collect_network_infos command without any pre-configured scope.",
           "type": "string",
           "enum": [
-            "allow-execute"
+            "allow-collect-network-infos"
           ]
         },
         {
-          "description": "deny-execute -> Denies the execute command without any pre-configured scope.",
+          "description": "deny-collect-network-infos -> Denies the collect_network_infos command without any pre-configured scope.",
           "type": "string",
           "enum": [
-            "deny-execute"
+            "deny-collect-network-infos"
           ]
         },
         {
-          "description": "allow-ping -> Enables the ping command without any pre-configured scope.",
+          "description": "allow-fd -> Enables the fd command without any pre-configured scope.",
           "type": "string",
           "enum": [
-            "allow-ping"
+            "allow-fd"
           ]
         },
         {
-          "description": "deny-ping -> Denies the ping command without any pre-configured scope.",
+          "description": "deny-fd -> Denies the fd command without any pre-configured scope.",
           "type": "string",
           "enum": [
-            "deny-ping"
+            "deny-fd"
+          ]
+        },
+        {
+          "description": "allow-parse-network-config -> Enables the parse_network_config command without any pre-configured scope.",
+          "type": "string",
+          "enum": [
+            "allow-parse-network-config"
+          ]
+        },
+        {
+          "description": "deny-parse-network-config -> Denies the parse_network_config command without any pre-configured scope.",
+          "type": "string",
+          "enum": [
+            "deny-parse-network-config"
+          ]
+        },
+        {
+          "description": "allow-start-network-instance -> Enables the start_network_instance command without any pre-configured scope.",
+          "type": "string",
+          "enum": [
+            "allow-start-network-instance"
+          ]
+        },
+        {
+          "description": "deny-start-network-instance -> Denies the start_network_instance command without any pre-configured scope.",
+          "type": "string",
+          "enum": [
+            "deny-start-network-instance"
+          ]
+        },
+        {
+          "description": "allow-stop-network-instance -> Enables the stop_network_instance command without any pre-configured scope.",
+          "type": "string",
+          "enum": [
+            "allow-stop-network-instance"
+          ]
+        },
+        {
+          "description": "deny-stop-network-instance -> Denies the stop_network_instance command without any pre-configured scope.",
+          "type": "string",
+          "enum": [
+            "deny-stop-network-instance"
           ]
         }
       ]

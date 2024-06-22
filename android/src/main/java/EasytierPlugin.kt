@@ -9,20 +9,19 @@ import app.tauri.plugin.Plugin
 import app.tauri.plugin.Invoke
 
 @InvokeArg
-class PingArgs {
-  var value: String? = null
+class LinkArgs {
+    var ip: String? = null
 }
 
 @TauriPlugin
 class EasytierPlugin(private val activity: Activity): Plugin(activity) {
-    private val implementation = Easytier()
+    private val linkImplements = LinkService()
 
     @Command
-    fun ping(invoke: Invoke) {
-        val args = invoke.parseArgs(PingArgs::class.java)
-
+    fun fd(invoke: Invoke) {
+        val args = invoke.parseArgs(LinkArgs::class.java)
         val ret = JSObject()
-        ret.put("value", implementation.pong(args.value ?: "default value :("))
+        ret.put("fd", linkImplements.createVpnInterface(args.ip ?: ""))
         invoke.resolve(ret)
     }
 }

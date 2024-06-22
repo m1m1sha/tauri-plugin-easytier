@@ -1,0 +1,13 @@
+# Automatically generated - DO NOT EDIT!
+
+"$schema" = "../../schemas/schema.json"
+
+[[permission]]
+identifier = "allow-collect-network-infos"
+description = "Enables the collect_network_infos command without any pre-configured scope."
+commands.allow = ["collect_network_infos"]
+
+[[permission]]
+identifier = "deny-collect-network-infos"
+description = "Denies the collect_network_infos command without any pre-configured scope."
+commands.deny = ["collect_network_infos"]

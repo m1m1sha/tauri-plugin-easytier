@@ -10,8 +10,16 @@ links = "tauri-plugin-easytier"
 
 [dependencies]
 tauri = { version = "2.0.0-beta" }
+tokio = { version = "1.38", features = ["full"] }
 serde = "1.0"
+dashmap = "5.5"
+once_cell = "1.19"
 thiserror = "1.0"
+anyhow = "1.0"
+md5 = "0.7"
+chrono = { version = "0.4", features = ["serde"] }
+
+easytier = { path = "C:\\code\\EasyTier\\easytier" }
 
 [build-dependencies]
 tauri-plugin = { version = "2.0.0-beta", features = ["build"] }

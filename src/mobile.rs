@@ -7,7 +7,7 @@ use tauri::{
 use crate::models::*;
 
 #[cfg(target_os = "android")]
-const PLUGIN_IDENTIFIER: &str = "";
+const PLUGIN_IDENTIFIER: &str = "org.easytier.plugin";
 
 #[cfg(target_os = "ios")]
 tauri::ios_plugin_binding!(init_plugin_easytier);
@@ -28,9 +28,8 @@ pub fn init<R: Runtime, C: DeserializeOwned>(
 pub struct Easytier<R: Runtime>(PluginHandle<R>);
 
 impl<R: Runtime> Easytier<R> {
-    pub fn ping(&self, payload: PingRequest) -> crate::Result<PingResponse> {
-        self.0
-            .run_mobile_plugin("ping", payload)
-            .map_err(Into::into)
+    #[cfg(target_os = "android")]
+    pub fn fd(&self, payload: FdRequest) -> crate::Result<FdResponse> {
+        self.0.run_mobile_plugin("fd", payload).map_err(Into::into)
     }
 }

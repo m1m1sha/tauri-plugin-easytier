@@ -1,0 +1,13 @@
+# Automatically generated - DO NOT EDIT!
+
+"$schema" = "../../schemas/schema.json"
+
+[[permission]]
+identifier = "allow-stop-network-instance"
+description = "Enables the stop_network_instance command without any pre-configured scope."
+commands.allow = ["stop_network_instance"]
+
+[[permission]]
+identifier = "deny-stop-network-instance"
+description = "Denies the stop_network_instance command without any pre-configured scope."
+commands.deny = ["stop_network_instance"]
