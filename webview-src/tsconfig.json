@@ -1,16 +1,24 @@
 {
   "compilerOptions": {
-    "target": "ES5",
-    "strict": true,
-    "allowJs": true,
-    "esModuleInterop": true,
+    "target": "ES2023",
     "baseUrl": ".",
+    "rootDir": "./",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "paths": {
-      "types": ["@types"]
+      "types": [
+        "@types"
+      ]
     },
+    "allowJs": true,
+    "strict": true,
     "declaration": true,
     "declarationDir": "../webview-dist",
-    "rootDir": "./"
+    "outDir": "../webview-dist",
+    "esModuleInterop": true
   },
-  "include": ["./"]
+  "exclude": [
+    "../webview-dist",
+    "../node_modules"
+  ]
 }

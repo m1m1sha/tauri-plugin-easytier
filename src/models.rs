@@ -12,17 +12,17 @@ use easytier::{
 use serde::{Deserialize, Serialize};
 
 use std::net::Ipv4Addr;
-#[cfg(unix)]
+#[cfg(mobile)]
 use std::os::unix::io::RawFd;
 
-#[cfg(unix)]
+// #[cfg(mobile)]
 #[derive(Debug, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct FdRequest {
     pub ip: String,
 }
 
-#[cfg(unix)]
+#[cfg(mobile)]
 #[derive(Debug, Clone, Default, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct FdResponse {

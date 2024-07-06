@@ -1,21 +1,20 @@
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
-import  terser from '@rollup/plugin-terser'
+import terser from '@rollup/plugin-terser'
 
 export default {
-  input: './webview-src/index.ts',
+  input: './webview-src/index.mts',
   output: {
     dir: './webview-dist',
     entryFileNames: '[name].js',
-    format: 'es',
-    exports: 'auto'
+    exports: 'auto',
   },
   plugins: [
     nodeResolve(),
     terser(),
     typescript({
       tsconfig: './webview-src/tsconfig.json',
-      moduleResolution: 'node'
-    })
-  ]
+      moduleResolution: 'NodeNext',
+    }),
+  ],
 }

@@ -29,7 +29,7 @@ pub struct Easytier<R: Runtime>(PluginHandle<R>);
 
 impl<R: Runtime> Easytier<R> {
     #[cfg(target_os = "android")]
-    pub fn fd(&self, payload: FdRequest) -> crate::Result<FdResponse> {
+    pub fn get_fd(&self, payload: FdRequest) -> crate::Result<FdResponse> {
         self.0.run_mobile_plugin("fd", payload).map_err(Into::into)
     }
 }

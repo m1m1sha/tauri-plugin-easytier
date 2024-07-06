@@ -56,6 +56,7 @@ pub(crate) fn collect_network_infos() -> Result<BTreeMap<String, NetworkInstance
 pub(crate) async fn start_network_instance<R: Runtime>(
     app: AppHandle<R>,
     cfg: NetworkConfig,
+    emit_tag: Option<String>,
 ) -> Result<()> {
     if INSTANCE.contains_key(&cfg.id) {
         return Err(Error::new(
@@ -64,10 +65,18 @@ pub(crate) async fn start_network_instance<R: Runtime>(
         )
         .into());
     }
+    let emit_tag = emit_tag.unwrap_or(String::from("easytier://network/instance/info"));
     let id = cfg.id.clone();
     let cfg = cfg.gen_config().map_err(|e| e.to_string()).unwrap();
     let mut instance = NetworkInstance::new(cfg);
-    // get android fd
+
+    #[cfg(mobile)]
+    {
+        // use crate::mobile::Easytier;
+        // let et = app.state::<Easytier<R>>();
+        // et.get_fd(FdRequest { ip: String::new() }).map(|fd| instance.set_fd(fd));
+    }
+
     instance.start().map_err(|e| e.to_string()).unwrap();
 
     if !EMIT_INSTANCE_INFO.load(Ordering::Relaxed) {
@@ -101,7 +110,7 @@ pub(crate) async fn start_network_instance<R: Runtime>(
                     flag = 0;
                 }
 
-                let _ = app.emit("network_instance_info", &ret);
+                let _ = app.emit(emit_tag.as_str(), &ret);
                 ret.clear();
                 tokio::time::sleep(Duration::from_secs(1)).await;
             }

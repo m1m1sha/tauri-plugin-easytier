@@ -309,17 +309,17 @@
           ]
         },
         {
-          "description": "allow-fd -> Enables the fd command without any pre-configured scope.",
+          "description": "allow-get-fd -> Enables the get_fd command without any pre-configured scope.",
           "type": "string",
           "enum": [
-            "allow-fd"
+            "allow-get-fd"
           ]
         },
         {
-          "description": "deny-fd -> Denies the fd command without any pre-configured scope.",
+          "description": "deny-get-fd -> Denies the get_fd command without any pre-configured scope.",
           "type": "string",
           "enum": [
-            "deny-fd"
+            "deny-get-fd"
           ]
         },
         {

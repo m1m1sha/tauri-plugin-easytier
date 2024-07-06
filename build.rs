@@ -1,5 +1,5 @@
 const COMMANDS: &[&str] = &[
-    "fd",
+    "get_fd",
     "parse_network_config",
     "stop_network_instance",
     "collect_network_infos",
